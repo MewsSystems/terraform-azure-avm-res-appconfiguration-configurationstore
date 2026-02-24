@@ -282,6 +282,18 @@ DESCRIPTION
   nullable    = false
 }
 
+variable "role_assignment_name_use_random_uuid" {
+  type        = bool
+  default     = false
+  nullable    = false
+  description = <<DESCRIPTION
+A control to use a random UUID for the role assignment name.
+If set to false, the name will be a deterministic UUID based on the principal ID and role definition resource ID,
+though this can cause issues with duplicate UUIDs as the scope of the role assignment is not taken into account.
+Set to true to avoid UUID collisions when the same principal and role are assigned across multiple stores.
+DESCRIPTION
+}
+
 variable "role_assignments" {
   type = map(object({
     role_definition_id_or_name             = string
