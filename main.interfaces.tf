@@ -11,5 +11,6 @@ module "avm_interfaces" {
   private_endpoints_manage_dns_zone_group = var.private_endpoints_manage_dns_zone_group
   private_endpoints_scope                 = "${var.resource_group_resource_id}/providers/Microsoft.AppConfiguration/configurationStores/${var.name}"
   role_assignment_definition_scope        = var.resource_group_resource_id
+  role_assignment_name_use_random_uuid    = var.role_assignment_name_use_random_uuid
   role_assignments                        = var.role_assignments
 }
